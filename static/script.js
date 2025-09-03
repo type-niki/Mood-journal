@@ -16,17 +16,17 @@ textarea.addEventListener("input", () => {
 form.addEventListener("submit", (e) => {
     e.preventDefault(); // Stop default submit
 
-    const entryText = textarea.value.toLowerCase();
+    const entry_text = textarea.value.toLowerCase();
 
-    if (entryText.includes("happy") || entryText.includes("great")) {
-        alert("👩‍💻 Wow! AI thinks your mood is Positive!");
-    } else if (entryText.includes("sad") || entryText.includes("tired")) {
-        alert("👩‍💻 Tomorrow will be better, AI thinks your mood is Negative 🌹");
+    if (entry_text.includes("happy") || entry_text.includes("great")) {
+        alert("👩‍💻AI thinks your mood is Positive!");
+    } else if (entry_text.includes("sad") || entry_text.includes("tired")) {
+        alert("👩‍💻AI thinks your mood is Negative 🌹");
     } else {
-        alert("👩‍💻 You've got this, just try to cheer up!");
+        alert("👩‍💻You've got this, just try to cheer up!");
     }
 
-    form.submit(); // Submit after alert
+    form.submit().reset(); // Submit after alert
 });
 
 // ===== Chart.js Visualization =====
@@ -41,6 +41,8 @@ moodData.forEach(entry => {
     if (mood === "positive") moodCounts.positive++;
     else if (mood === "negative") moodCounts.negative++;
     else moodCounts.neutral++;
+
+
 });
 
 // Render Chart

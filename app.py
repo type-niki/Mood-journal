@@ -44,9 +44,10 @@ def add_entry():
         mood = "neutral"  # fallback
 
     # Save into database
+    entry_text = text;
     cursor.execute(
         "INSERT INTO entries (entry_text, mood, created_at) VALUES (%s, %s, %s)",
-        (text, mood, created_at)
+        (entry_text, mood, created_at)
     )
     db.commit()
 
